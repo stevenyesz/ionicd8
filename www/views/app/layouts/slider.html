@@ -1,0 +1,19 @@
+<ion-view class="slider-view">
+  <ion-nav-title>
+    <span>幻灯片</span>
+  </ion-nav-title>
+  <ion-content scroll="false">
+    <ion-slide-box show-pager="true">
+      <ion-slide ng-repeat="i in [734,723,722,721,717]">
+        <div class="list card">
+          <div class="item item-image">
+            <img ng-src="http://unsplash.it/300/200/?image={{i}}">
+          </div>
+          <div class="item item-body">
+            <p>神奇的幻灯片效果，您还满意不？</p>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

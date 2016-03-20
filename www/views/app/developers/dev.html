@@ -1,0 +1,37 @@
+<ion-view class="post-view">
+  <ion-content>
+    <div class="post-heading item item-text-wrap item-avatar">
+      <img ng-src="{{ developer.field_face[0].url }}">
+      <h3 class="post-title">{{developer.title[0].value}}</h3>
+      <p class="post-author">
+        <span>{{developer.body[0].summary}}</span> <span am-time-ago="developer.date"></span>
+      </p>
+    </div>
+    <div class="post-tags item item-text-wrap">
+      
+      <span class="" ng-repeat="tag in developer.field_tags">
+        <a class="post-tag button button-small button-outline button-stable" ui-sref="app.developers({tid: tag.target_id})">{{tag.target_id}}</a></span>
+    </div>
+
+    <div class="post-content item item-text-wrap" post-content>
+      <p class="post-text " dynamic-anchor-fix ng-bind-html="developer.body[0].value | rawHtml"></p>
+      <p class="post-image"><img ng-src="{{ developer.field_image[0].url }}"></p>
+    </div>
+  </ion-content>
+  <ion-footer-bar class="post-footer bar bar-footer bar-dark">
+    <div class="row">
+      <div class="col col-20 col-center">
+        <a class="button button-icon icon icon-right ion-plus" bigger-text=".post-view .post-text">A</a>
+      </div>
+      <div class="col col-20 col-center">
+        <a class="button button-icon icon icon-right ion-minus" smaller-text=".post-view .post-text">A</a>
+      </div>
+      <div class="col col-20 col-offset-20 col-center">
+        <a class="button button-icon icon ion-heart"></a>
+      </div>
+      <div class="col col-20 col-center">
+        <a class="button button-icon icon ion-android-share-alt" ng-click="sharePost(developer.url)"></a>
+      </div>
+    </div>
+  </ion-footer-bar>
+</ion-view>

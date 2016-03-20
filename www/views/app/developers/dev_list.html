@@ -1,0 +1,45 @@
+<ion-view class="wordpress-view">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-title>
+    <span>开发者风采</span>
+  </ion-nav-title>
+  <ion-content>
+    <!-- Refresh to get the new posts -->
+    <!--
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+    </ion-refresher>
+    -->
+    <div class="posts-list">
+      <div ng-repeat="developer in developers" class="list card post-item">
+        <div class="post-heading item item-text-wrap item-avatar">
+          <img ng-src="{{ developer.field_face[0].url }}">
+          <h3 class="post-title" ng-bind-html="developer.title[0].value | rawHtml"></h3>
+          <p class="post-author">
+            <span>{{developer.body[0].summary}}</span>
+          </p>
+        </div>
+        <div class="post-content item item-text-wrap" post-content>
+          <p class="post-excerpt" dynamic-anchor-fix ng-bind-html="developer.body[0].value | rawHtml"></p>
+          <div class="post-actions row">
+            <div class="actions col col-center col-66">
+              <a class="button button-icon icon ion-bookmark" ng-click="bookmarkPost(post)"></a>
+            </div>
+            <div class="read-more col col-center col-33">
+              <a ui-sref="app.developer({nid: developer.nid[0].value})" class="button button-small button-block button-assertive">
+                详细介绍
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Infinit scroll -->
+    <!--
+    <ion-infinite-scroll ng-if="moreDataCanBeLoaded()" on-infinite="loadMoreData()" distance="1%" icon="ion-loading-c">
+    </ion-infinite-scroll>
+    -->
+  </ion-content>
+</ion-view>
