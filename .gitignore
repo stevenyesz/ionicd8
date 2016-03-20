@@ -13,7 +13,7 @@ hooks/after_prepare/040_move_dist_files_to_platforms.js
 hooks/after_prepare/050_clean_obfuscation.js
 hooks/after_prepare/060_add_platform_class.js
 tmp/
-dist/
+#dist/
 #www/dist/
 #www/fonts/
 .DS_Store
