@@ -2,7 +2,7 @@ Your Ionic project is ready to go! Some quick tips:
 
 * cd into your project:
 ```
-cd ionFullApp
+cd ionicd8
 ```
 
 * Setup this project to use Sass:
@@ -47,4 +47,3 @@ ionic package <MODE> <PLATFORM>
 For more help use ```ionic --help``` or visit the Ionic docs: http://ionicframework.com/docs
 
 
-You can find the documentation here: http://bit.ly/ionicthemes-ionfullapp
